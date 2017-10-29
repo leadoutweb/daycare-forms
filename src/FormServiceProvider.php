@@ -15,6 +15,6 @@ class FormServiceProvider extends ServiceProvider
     {
         $this->publishes([
             __DIR__.'/../resources/assets/js/components/forms' => resource_path('assets/js/vendor/forms')
-        ]);
+        ], 'daycare-forms');
     }
 }
