@@ -1,0 +1,24 @@
+{
+    "name": "leadout/daycare-forms",
+    "authors": [
+        {
+            "name": "Henrik Mikkelsen",
+            "email": "henrik@topnotchdevelopers.dk"
+        }
+    ],
+    "require": {
+        "illuminate/support": "^5.5"
+    },
+    "autoload": {
+        "psr-4": {
+            "Leadout\\Daycare\\Forms\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Leadout\\Daycare\\Forms\\FormServiceProvider"
+            ]
+        }
+    }
+}
