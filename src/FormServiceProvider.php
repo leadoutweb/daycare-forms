@@ -14,7 +14,7 @@ class FormServiceProvider extends ServiceProvider
     public function boot()
     {
         $this->publishes([
-            __DIR__.'/../resources/assets/js/components/forms' => resource_path('assets/js/vendor/components/forms')
+            __DIR__.'/../resources/assets/js/components/forms' => resource_path('assets/js/vendor/forms')
         ]);
     }
 }
