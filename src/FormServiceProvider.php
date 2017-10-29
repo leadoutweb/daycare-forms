@@ -1,6 +1,6 @@
 <?php
 
-namespace Leadout\Daycare\Forms\FormServiceProvider;
+namespace Leadout\Daycare\Forms;
 
 use Illuminate\Support\ServiceProvider;
 
