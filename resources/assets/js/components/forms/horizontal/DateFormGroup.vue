@@ -1,6 +1,12 @@
 <template>
     <form-group :name="name" :label="label" :error="error" :label-width="labelWidth" :input-width="inputWidth">
-        <input type="text" class="form-control" :id="name" :placeholder="label" :value="value">
+        <input
+                type="text"
+                class="form-control"
+                :id="name"
+                :placeholder="placeholder ? placeholder : label"
+                :value="value"
+        >
     </form-group>
 </template>
 
@@ -13,9 +19,10 @@
         props: {
             "name": {},
             "label": {},
+            "placeholder": {},
             "value": {},
             "error": {},
-         "labelWidth": {}, 
+            "labelWidth": {},
             "inputWidth": {},
             "format": {
                 "default": "YYYY-MM-DD"

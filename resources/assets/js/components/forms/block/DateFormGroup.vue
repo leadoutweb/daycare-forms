@@ -1,6 +1,12 @@
 <template>
     <form-group :name="name" :label="label" :error="error">
-        <input type="text" class="form-control" :id="name" :placeholder="label" :value="value">
+        <input
+                type="text" 
+                class="form-control"
+                :id="name" 
+                :placeholder="placeholder ? placeholder : label"
+                :value="value"
+        >
     </form-group>
 </template>
 
@@ -13,6 +19,7 @@
         props: {
             "name": {},
             "label": {},
+            "placeholder": {},
             "value": {},
             "error": {},
             "format": {

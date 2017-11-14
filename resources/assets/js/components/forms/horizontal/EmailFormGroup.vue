@@ -4,7 +4,7 @@
                 type="email"
                 class="form-control"
                 :id="name"
-                :placeholder="label"
+                :placeholder="placeholder ? placeholder : label"
                 :value="value"
                 @input="$emit('input', $event.target.value)"
         >
@@ -17,6 +17,6 @@
     export default {
         components: {FormGroup},
         
-        props: ["name", "label", "value", "error", "labelWidth", "inputWidth"]
+        props: ["name", "label", "placeholder", "value", "error", "labelWidth", "inputWidth"]
     }
 </script>

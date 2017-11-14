@@ -1,6 +1,6 @@
 <template>
     <div class="form-group" :class="{'has-error': hasError}">
-        <label :for="name">{{ label }}</label>
+        <label :for="name" v-if="label">{{ label }}</label>
         <slot></slot>
     </div>
 </template>
