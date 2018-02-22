@@ -1,6 +1,7 @@
 <template>
     <select
             :id="name"
+            :value="value"
             class="form-control"
             @input="$emit('input', $event.target.value)"
     >
