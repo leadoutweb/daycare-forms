@@ -1,10 +1,10 @@
 <template>
     <form-group :name="name" :label="label" :error="error">
         <input
-                type="number"
-                class="form-control"
+                type="text"
                 :id="name"
-                :placeholder="placeholder ? placeholder : label"
+                class="form-control"
+                :placeholder="label"
                 :value="value"
                 @input="$emit('input', $event.target.value)"
         >
@@ -17,6 +17,11 @@
     export default {
         components: {FormGroup},
 
-        props: ["name", "label", "placeholder", "value", "error"]
+        props: {
+            "name": {},
+            "label": {},
+            "value": {},
+            "error": {}
+        },
     }
 </script>

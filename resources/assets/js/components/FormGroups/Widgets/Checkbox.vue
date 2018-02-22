@@ -1,24 +1,25 @@
 <template>
-    <form-group :name="name" :label="label" :error="error" :label-width="labelWidth" :input-width="inputWidth">
+    <div>
         <label class="checkbox-inline" v-for="option in options">
             <input
                     type="checkbox"
-                    name="name"
+                    :name="name"
                     value="option.value"
                     :checked="value.indexOf(option.value) > -1"
                     @click.stop="emit(option.value)"
             > {{ option.label }}
         </label>
-    </form-group>
+    </div>
 </template>
 
 <script>
-    import FormGroup from "./FormGroup";
-
     export default {
-        components: {FormGroup},
-
-        props: ["name", "label", "value", "error", "labelWidth", "inputWidth", "options"],
+        props: {
+            "name": {},
+            "value": {},
+            "options": {},
+            "error": {}
+        },
 
         methods: {
             emit(value) {

@@ -16,6 +16,10 @@
 
 <script>
     export default {
-        props: {"links": {}, "labelWidth": {"default": 3}, "inputWidth": {"default": 6}}
+        props: {
+            "links": {},
+            "labelWidth": {"default": 3}, 
+            "inputWidth": {"default": 6}
+        }
     }
 </script>
