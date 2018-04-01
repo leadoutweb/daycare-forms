@@ -20,7 +20,7 @@
             "name": {},
             "label": {},
             "error": {"default": null},
-            "labelWidth": {"default": 3},
+            "labelWidth": {"default": 4},
             "inputWidth": {"default": 6}
         },
 
