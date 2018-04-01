@@ -1,14 +1,14 @@
 <template>
-    <div class="form-group">
+    <div class="form-group" :class="{'has-error': hasError}">
         <label :for="name">
             {{ label }}
         </label>
 
         <slot></slot>
 
-        <span class="invalid-feedback" v-if="error">
-            <strong>{{ error }}</strong>
-        </span>
+        <span class="help-block" v-if="hasError">
+                {{ error }}
+            </span>
     </div>
 </template>
 
@@ -18,6 +18,12 @@
             "name": {},
             "label": {},
             "error": {"default": null}
+        },
+
+        computed: {
+            hasError() {
+                return this.error !== null;
+            }
         }
     }
 </script>
