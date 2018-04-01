@@ -18,7 +18,6 @@
             "name": {},
             "value": {},
             "options": {},
-            "error": {}
         }
     }
 </script>
