@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="button-form-group">
         <button
                 type="button"
                 v-for="option in options"
@@ -11,6 +11,12 @@
         </button>
     </div>
 </template>
+
+<style>
+    .button-form-group .btn {
+        margin-right: 5px;
+    }
+</style>
 
 <script>
     export default {
