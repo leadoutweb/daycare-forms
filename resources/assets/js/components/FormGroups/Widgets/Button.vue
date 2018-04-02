@@ -8,8 +8,7 @@
                 @click="$emit('input', option.value)"
         >
             {{ option.label }}
-        </button>
-        <button
+        </button><button
                 type="button"
                 v-if="nullable"
                 class="btn"
