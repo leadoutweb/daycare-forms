@@ -7,8 +7,8 @@
         <slot></slot>
 
         <span class="help-block" v-if="hasError">
-                {{ error }}
-            </span>
+            {{ error }}
+        </span>
     </div>
 </template>
 

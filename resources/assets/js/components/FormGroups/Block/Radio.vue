@@ -4,6 +4,8 @@
                 :name="name"
                 :value="value"
                 :options="options"
+                :placeholder="placeholder"
+                :nullable="nullable"
                 :error="error"
                 @input="$emit('input', $event)"
         ></radio-widget>
@@ -22,7 +24,9 @@
             "label": {},
             "value": {},
             "error": {},
-            "options": {}
+            "options": {},
+            "placeholder": {},
+            "nullable": {}
         }
     }
 </script>
