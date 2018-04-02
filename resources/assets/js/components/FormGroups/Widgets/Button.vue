@@ -9,7 +9,6 @@
         >
             {{ option.label }}
         </button>
-        
         <button
                 type="button"
                 v-if="nullable"
