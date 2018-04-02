@@ -3,6 +3,8 @@
         <button-widget
                 :value="value"
                 :options="options"
+                :placeholder="placeholder"
+                :nullable="nullable"
                 @input="$emit('input', $event)"
         ></button-widget>
     </form-group>
@@ -22,7 +24,9 @@
             "error": {},
             "labelWidth": {},
             "inputWidth": {},
-            "options": {}
+            "options": {},
+            "placeholder": {},
+            "nullable": {}
         }
     }
 </script>

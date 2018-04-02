@@ -9,6 +9,16 @@
         >
             {{ option.label }}
         </button>
+        
+        <button
+                type="button"
+                v-if="nullable"
+                class="btn"
+                :class="{'btn-grey': null !== value, 'btn-success': null === value}"
+                @click="$emit('input', null)"
+        >
+            {{ placeholder ? placeholder : "(none)" }}
+        </button>
     </div>
 </template>
 
@@ -22,7 +32,9 @@
     export default {
         props: {
             "value": {},
-            "options": {}
+            "options": {},
+            "placeholder": {},
+            "nullable": {}
         }
     }
 </script>
