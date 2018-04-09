@@ -14,13 +14,13 @@
         </option>
 
         <optgroup
-                v-for="(optionGroupOptions, optionGroupName) in options"
-                :label="optionGroupName | readable"
-                v-if="hasOptionGroups && optionGroupOptions.length"
+                v-for="optionGroup in options"
+                :label="optionGroup.label"
+                v-if="hasOptionGroups && optionGroup.options.length"
         >
             <option
-                    v-for="option in optionGroupOptions"
-                    :value="getOptionGroupValue(optionGroupName, option.value)"
+                    v-for="option in optionGroup.options"
+                    :value="option.value"
             >
                 {{ option.label }}
             </option>
@@ -41,12 +41,6 @@
         computed: {
             hasOptionGroups() {
                 return !(this.options instanceof Array);
-            }
-        },
-
-        filters: {
-            readable(string) {
-                return string.split("_").map(word => word.replace(word[0], word[0].toUpperCase())).join(" ");
             }
         },
 
