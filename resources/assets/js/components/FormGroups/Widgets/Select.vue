@@ -40,7 +40,7 @@
 
         computed: {
             hasOptionGroups() {
-                return !(this.options instanceof Array);
+                return this.options.length && typeof this.options[0].options !== "undefined";
             }
         },
 
