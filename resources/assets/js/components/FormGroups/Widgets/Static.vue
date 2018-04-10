@@ -1,7 +1,5 @@
 <template>
-    <p class="form-control-static">
-        {{ value }}
-    </p>
+    <p class="form-control-static" v-html="value"></p>
 </template>
 
 <script>
