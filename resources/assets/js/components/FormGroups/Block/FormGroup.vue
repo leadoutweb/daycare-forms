@@ -6,6 +6,10 @@
 
         <slot></slot>
 
+        <span class="help-block" v-if="hasHelpText">
+            {{ helpText }}
+        </span>
+
         <span class="help-block" v-if="hasError">
             {{ error }}
         </span>
@@ -17,10 +21,15 @@
         props: {
             "name": {},
             "label": {},
+            "helpText": {"default": null},
             "error": {"default": null}
         },
 
         computed: {
+            hasHelpText() {
+                return this.helpText !== null;
+            },
+
             hasError() {
                 return this.error !== null;
             }
