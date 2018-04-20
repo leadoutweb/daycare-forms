@@ -1,5 +1,5 @@
 <template>
-    <form-group :name="name" :label="label" :error="error">
+    <form-group :name="name" :label="label" :help-text="helpText" :error="error">
         <radio-widget
                 :name="name"
                 :value="value"
@@ -22,6 +22,7 @@
         props: {
             "name": {},
             "label": {},
+            "helpText": {"default": null},
             "value": {},
             "error": {},
             "options": {},

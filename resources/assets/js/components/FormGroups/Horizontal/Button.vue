@@ -1,5 +1,12 @@
 <template>
-    <form-group :name="name" :label="label" :error="error" :label-width="labelWidth" :input-width="inputWidth">
+    <form-group 
+            :name="name" 
+            :label="label" 
+            :help-text="helpText"
+            :error="error"
+            :label-width="labelWidth" 
+            :input-width="inputWidth"
+    >
         <button-widget
                 :value="value"
                 :options="options"
@@ -20,6 +27,7 @@
         props: {
             "name": {},
             "label": {},
+            "helpText": {"default": null},
             "value": {},
             "error": {},
             "labelWidth": {},

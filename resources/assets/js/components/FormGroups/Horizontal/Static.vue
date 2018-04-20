@@ -1,5 +1,5 @@
 <template>
-    <form-group :label="label" :label-width="labelWidth" :input-width="inputWidth">
+    <form-group :label="label" :help-text="helpText" :label-width="labelWidth" :input-width="inputWidth">
         <static-widget :value="value"></static-widget>
     </form-group>
 </template>
@@ -14,6 +14,7 @@
         props: {
             "label": {},
             "value": {},
+            "helpText": {"default": null},
             "labelWidth": {},
             "inputWidth": {}
         },

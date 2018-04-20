@@ -1,5 +1,5 @@
 <template>
-    <form-group :name="name" :label="label" :error="error">
+    <form-group :name="name" :label="label" :help-text="helpText" :error="error">
         <input
                 type="password"
                 :id="name"
@@ -20,6 +20,7 @@
         props: {
             "name": {},
             "label": {},
+            "helpText": {"default": null},
             "value": {},
             "error": {}
         },

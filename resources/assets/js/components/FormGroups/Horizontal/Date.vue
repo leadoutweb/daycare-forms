@@ -1,5 +1,12 @@
 <template>
-    <form-group :name="name" :label="label" :error="error" :label-width="labelWidth" :input-width="inputWidth">
+    <form-group
+            :name="name"
+            :label="label"
+            :help-text="helpText"
+            :error="error"
+            :label-width="labelWidth"
+            :input-width="inputWidth"
+    >
         <date-widget 
                 :name="name" 
                 :label="label"
@@ -20,6 +27,7 @@
         props: {
             "name": {},
             "label": {},
+            "helpText": {"default": null},
             "value": {},
             "error": {},
             "labelWidth": {},
