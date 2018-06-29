@@ -1,7 +1,7 @@
 <template>
     <div class="form-group">
         <slot>
-            <button type="submit" class="btn" :class="class">
+            <button type="submit" class="btn" :class="buttonClass">
                 <i class="fa fa-save"></i> Save
             </button>
         </slot>
@@ -16,7 +16,7 @@
     export default {
         props: {
             "links": {"default": () => []},
-            "class": {"default": "btn-success"},
+            "buttonClass": {"default": "btn-success"},
         }
     }
 </script>
