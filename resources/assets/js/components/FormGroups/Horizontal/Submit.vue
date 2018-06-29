@@ -2,7 +2,7 @@
     <div class="form-group">
         <div :class="'col-sm-offset-' + labelWidth + ' col-sm-' + inputWidth">
             <slot>
-                <button type="submit" class="btn btn-success">
+                <button type="submit" class="btn" :class="class">
                     <i class="fa fa-save"></i> Save
                 </button>
             </slot>
@@ -18,6 +18,7 @@
     export default {
         props: {
             "links": {},
+            "class": {"default": "btn-success"},
             "labelWidth": {"default": 4}, 
             "inputWidth": {"default": 6}
         }

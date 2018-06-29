@@ -5,8 +5,9 @@
                 class="form-control"
                 :placeholder="label"
                 :rows="rows"
+                :value="value"
                 @input="$emit('input', $event.target.value)"
-        >{{ value }}</textarea>
+        ></textarea>
     </form-group>
 </template>
 
