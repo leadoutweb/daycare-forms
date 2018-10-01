@@ -6,7 +6,7 @@
             :placeholder="placeholder"
             v-model="searchInputValue"
         >
-        <i v-if="activeId" class="typeahead-widget__icon fa fa-check"></i>
+        <i v-if="value.id" class="typeahead-widget__icon fa fa-check"></i>
         <ul class="dropdown-menu" v-show="dropdownVisible">
             <li v-if="fetching && results.length === 0">
                 <a disabled>
@@ -57,6 +57,12 @@
                 type: String,
                 default: 'id'
             },
+            "value": {
+                type: Object,
+                default() {
+                    return {}
+                }
+            }
         },
 
         data() {
@@ -64,17 +70,19 @@
                 results: [],
                 fetching: false,
                 hasFocus: false,
-                searchInputValue: '',
-                value: '',
-                activeId: null
+                searchInputValue: this.value.label
             }
         },
 
         watch: {
             searchInputValue(newValue) {
                 // Reset active result if value changed
-                if (this.activeId) {
-                    this.activeId = null
+                if (this.value.label && this.value.label  !== newValue) {
+                    this.$emit('input', { id: null, label: null })
+                    this.$nextTick(() => {
+                        this.fetching = true
+                        this.fetchResults()
+                    })
                 } else if (newValue === '') {
                     this.results = []
                     this.fetching = false
@@ -103,15 +111,14 @@
                 this.searchInputValue = label
 
                 this.$nextTick(() => {
-                    this.activeId = id
                     this.results = []
                     this.fetching = false
-                    this.$emit('input', id)
+                    this.$emit('input', { id, label })
                 })
             },
 
             fetchResults() {
-                const searchInputValue = this.searchInputValue
+                var searchInputValue = this.searchInputValue
 
                 if (searchInputValue !== '') {
                     return axios({

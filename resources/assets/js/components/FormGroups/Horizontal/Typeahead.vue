@@ -13,14 +13,14 @@
             :token="token"
             :params="params"
             :path="path"
-            @change="$emit('input', $event)"
+            v-model="intermediateValue"
         ></typeahead-widget>
     </form-group>
 </template>
 
 <script>
-    import FormGroup from "./FormGroup";
-    import TypeaheadWidget from "../Widgets/Typeahead";
+    import FormGroup from "../../vendor/forms/FormGroups/Horizontal/FormGroup";
+    import TypeaheadWidget from "./TypeaheadWidget";
 
     export default {
         components: {FormGroup, TypeaheadWidget},
@@ -33,12 +33,28 @@
             "error": {},
             "labelWidth": {},
             "inputWidth": {},
+            "value": {},
 
             "placeholder": String,
             "endpoint": String,
             "token": String,
             "path": String,
             "params": Object
+        },
+
+        data() {
+            return {
+                intermediateValue: this.value
+            }
+        },
+
+        watch: {
+            intermediateValue(newValue) {
+                this.$emit('input', newValue)
+            },
+            value(newValue) {
+                this.intermediateValue = newValue
+            }
         }
     }
 </script>
