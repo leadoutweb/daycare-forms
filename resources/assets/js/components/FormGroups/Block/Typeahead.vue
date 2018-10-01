@@ -14,6 +14,7 @@
             :params="params"
             :path="path"
             v-model="intermediateValue"
+            :initial-label="initialLabel"
         ></typeahead-widget>
     </form-group>
 </template>
@@ -33,8 +34,9 @@
             "error": {},
             "labelWidth": {},
             "inputWidth": {},
-            "value": {},
+            "value": [Number, String],
 
+            "initialLabel": String,
             "placeholder": String,
             "endpoint": String,
             "token": String,

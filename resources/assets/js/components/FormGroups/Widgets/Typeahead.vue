@@ -6,7 +6,7 @@
             :placeholder="placeholder"
             v-model="searchInputValue"
         >
-        <i v-if="value.id" class="typeahead-widget__icon fa fa-check"></i>
+        <i v-if="value" class="typeahead-widget__icon fa fa-check"></i>
         <ul class="dropdown-menu" v-show="dropdownVisible">
             <li v-if="fetching && results.length === 0">
                 <a disabled>
@@ -57,12 +57,8 @@
                 type: String,
                 default: 'id'
             },
-            "value": {
-                type: Object,
-                default() {
-                    return {}
-                }
-            }
+            "value": [Number, String],
+            "initialLabel": String
         },
 
         data() {
@@ -70,15 +66,15 @@
                 results: [],
                 fetching: false,
                 hasFocus: false,
-                searchInputValue: this.value.label
+                searchInputValue: this.initialLabel || ''
             }
         },
 
         watch: {
             searchInputValue(newValue) {
                 // Reset active result if value changed
-                if (this.value.label && this.value.label  !== newValue) {
-                    this.$emit('input', { id: null, label: null })
+                if (this.value) {
+                    this.$emit('input', null)
                     this.$nextTick(() => {
                         this.fetching = true
                         this.fetchResults()
@@ -113,7 +109,7 @@
                 this.$nextTick(() => {
                     this.results = []
                     this.fetching = false
-                    this.$emit('input', { id, label })
+                    this.$emit('input', id)
                 })
             },
 
