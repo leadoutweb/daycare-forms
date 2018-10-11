@@ -3,14 +3,14 @@
 </template>
 
 <script>
-    import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
+    import ClassicEditor from '@leadoutweb/ckeditor5-build-classic-including-alignment';
 
     export default {
         props: {
             "name": {},
             "value": {},
             "toolbar": {
-                "default": () => ['heading', '|', 'bold', 'italic', 'link', 'bulletedList', 'numberedList', 'blockQuote', 'undo', 'redo']
+                "default": () => ['heading', '|', 'alignment', 'bold', 'italic', 'link', 'bulletedList', 'numberedList', 'blockQuote', 'undo', 'redo']
             },
             "disabled": {"default": false}
         },
