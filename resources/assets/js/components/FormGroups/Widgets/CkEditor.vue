@@ -1,5 +1,5 @@
 <template>
-    <textarea :id="name" class="form-control">{{ value }}</textarea>
+    <textarea :id="name" class="form-control" :disabled="disabled">{{ value }}</textarea>
 </template>
 
 <script>
@@ -11,7 +11,8 @@
             "value": {},
             "toolbar": {
                 "default": () => ['heading', '|', 'bold', 'italic', 'link', 'bulletedList', 'numberedList', 'blockQuote', 'undo', 'redo']
-            }
+            },
+            "disabled": {"default": false}
         },
 
         mounted() {

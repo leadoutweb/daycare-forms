@@ -3,6 +3,7 @@
             :id="name"
             :value="value"
             class="form-control"
+            :disabled="disabled"
             @input="$emit('input', $event.target.value)"
     >
         <option value="" :disabled="!nullable">
@@ -35,7 +36,8 @@
             "value": {},
             "options": {},
             "placeholder": {},
-            "nullable": {}
+            "nullable": {},
+            "disabled": {"default": false}
         },
 
         computed: {

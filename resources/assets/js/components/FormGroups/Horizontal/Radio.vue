@@ -14,6 +14,7 @@
                 :placeholder="placeholder"
                 :nullable="nullable"
                 :error="error"
+                :disabled="disabled"
                 @input="$emit('input', $event)"
         ></radio-widget>
     </form-group>
@@ -36,7 +37,8 @@
             "inputWidth": {},
             "options": {},
             "placeholder": {},
-            "nullable": {}
+            "nullable": {},
+            "disabled": {"default": false}
         }
     }
 </script>

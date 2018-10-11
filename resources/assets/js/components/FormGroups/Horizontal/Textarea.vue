@@ -13,6 +13,7 @@
                 :placeholder="label"
                 :rows="rows"
                 :value="value"
+                :disabled="disabled"
                 @input="$emit('input', $event.target.value)"
         ></textarea>
     </form-group>
@@ -34,7 +35,8 @@
             "inputWidth": {},
             "rows": {
                 "default": 4
-            }
+            },
+            "disabled": {"default": false}
         }
     }
 </script>

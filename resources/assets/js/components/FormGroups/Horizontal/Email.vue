@@ -13,6 +13,7 @@
                 class="form-control"
                 :placeholder="label"
                 :value="value"
+                :disabled="disabled"
                 @input="$emit('input', $event.target.value)"
         >
     </form-group>
@@ -31,7 +32,8 @@
             "value": {},
             "error": {},
             "labelWidth": {},
-            "inputWidth": {}
+            "inputWidth": {},
+            "disabled": {"default": false}
         },
     }
 </script>

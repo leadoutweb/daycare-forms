@@ -11,7 +11,8 @@
                 :name="name" 
                 :label="label"
                 :value="value"
-                :format="format"
+                :parameters="parameters"
+                :disabled="disabled"
                 @input="$emit('input', $event)"
         ></date-widget>
     </form-group>
@@ -32,7 +33,14 @@
             "error": {},
             "labelWidth": {},
             "inputWidth": {},
-            "format": {}
+            "parameters": {
+                "default"() {
+                    return {
+                        "format": "YYYY-MM-DD"
+                    }
+                }
+            },
+            "disabled": {"default": false}
         }
     }
 </script>

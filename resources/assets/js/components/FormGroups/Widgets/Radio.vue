@@ -6,6 +6,7 @@
                     :name="name"
                     :value="option.value"
                     :checked="option.value === value"
+                    :disabled="disabled"
                     @click.stop="$emit('input', option.value)"
             > {{ option.label }}
         </label>
@@ -16,6 +17,7 @@
                     :name="name"
                     :value="null"
                     :checked="value === null"
+                    :disabled="disabled"
                     @click.stop="$emit('input', null)"
             > {{ placeholder ? placeholder : "(none)" }}
         </label>
@@ -29,7 +31,8 @@
             "value": {},
             "options": {},
             "placeholder": {},
-            "nullable": {}
+            "nullable": {},
+            "disabled": {"default": false}
         }
     }
 </script>

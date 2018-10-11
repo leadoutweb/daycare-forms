@@ -13,6 +13,7 @@
                 :options="options"
                 :placeholder="placeholder"
                 :nullable="nullable"
+                :disabled="disabled"
                 @input="$emit('input', $event)"
         ></select-widget>
     </form-group>
@@ -35,7 +36,8 @@
             "inputWidth": {},
             "options": {},
             "placeholder": {},
-            "nullable": {}
+            "nullable": {},
+            "disabled": {"default": false}
         }
     }
 </script>

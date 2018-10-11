@@ -5,6 +5,7 @@
                 :options="options"
                 :placeholder="placeholder"
                 :nullable="nullable"
+                :disabled="disabled"
                 @input="$emit('input', $event)"
         ></button-widget>
     </form-group>
@@ -25,7 +26,8 @@
             "error": {},
             "options": {},
             "placeholder": {},
-            "nullable": {}
+            "nullable": {},
+            "disabled": {"default": false}
         }
     }
 </script>

@@ -5,6 +5,7 @@
             class="form-control"
             :placeholder="label"
             :value="value"
+            :disabled="disabled"
             @input="$emit('input', $event.target.value)"
     >
 </template>
@@ -15,13 +16,18 @@
             "name": {},
             "label": {},
             "value": {},
-            "format": {
-                "default": "YYYY-MM-DD"
-            }
+            "parameters": {
+                "default"() {
+                    return {
+                        "format": "YYYY-MM-DD"
+                    }
+                }
+            },
+            "disabled": {"default": false}
         },
 
         mounted() {
-            $(this.$el).datetimepicker({format: this.format});
+            $(this.$el).datetimepicker(this.parameters);
 
             $(this.$el).on("dp.change", (event) => {
                 this.$emit("input", event.target.value);

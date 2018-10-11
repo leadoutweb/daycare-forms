@@ -6,6 +6,7 @@
                     :name="name"
                     value="option.value"
                     :checked="value.indexOf(option.value) > -1"
+                    :disabled="disabled"
                     @click.stop="emit(option.value)"
             > {{ option.label }}
         </label>
@@ -18,7 +19,8 @@
             "name": {},
             "value": {},
             "options": {},
-            "error": {}
+            "error": {},
+            "disabled": {"default": false}
         },
 
         methods: {

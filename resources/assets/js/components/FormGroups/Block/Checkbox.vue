@@ -5,6 +5,7 @@
                 :value="value"
                 :options="options"
                 :error="error"
+                :disabled="disabled"
                 @input="$emit('input', $event)"
         ></checkbox-widget>
     </form-group>
@@ -23,7 +24,8 @@
             "helpText": {"default": null},
             "value": {},
             "error": {},
-            "options": {}
+            "options": {},
+            "disabled": {"default": false}
         }
     }
 </script>

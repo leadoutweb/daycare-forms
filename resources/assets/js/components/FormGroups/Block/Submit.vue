@@ -1,7 +1,7 @@
 <template>
     <div class="form-group">
         <slot>
-            <button type="submit" class="btn" :class="buttonClass">
+            <button type="submit" class="btn" :class="buttonClass" :disabled="disabled">
                 <i class="fa fa-save"></i> Save
             </button>
         </slot>
@@ -17,6 +17,7 @@
         props: {
             "links": {"default": () => []},
             "buttonClass": {"default": "btn-success"},
+            "disabled": {"default": false}
         }
     }
 </script>

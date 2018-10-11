@@ -6,6 +6,7 @@
                 :placeholder="label"
                 :rows="rows"
                 :value="value"
+                :disabled="disabled"
                 @input="$emit('input', $event.target.value)"
         ></textarea>
     </form-group>
@@ -23,9 +24,8 @@
             "helpText": {"default": null},
             "value": {},
             "error": {},
-            "rows": {
-                "default": 4
-            }
+            "rows": {"default": 4},
+            "disabled": {"default": false}
         }
     }
 </script>

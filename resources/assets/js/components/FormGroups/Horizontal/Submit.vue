@@ -2,7 +2,7 @@
     <div class="form-group">
         <div :class="'col-sm-offset-' + labelWidth + ' col-sm-' + inputWidth">
             <slot>
-                <button type="submit" class="btn" :class="buttonClass">
+                <button type="submit" class="btn" :class="buttonClass" :disabled="disabled">
                     <i class="fa fa-save"></i> Save
                 </button>
             </slot>
@@ -20,7 +20,8 @@
             "links": {},
             "buttonClass": {"default": "btn-success"},
             "labelWidth": {"default": 4}, 
-            "inputWidth": {"default": 6}
+            "inputWidth": {"default": 6},
+            "disabled": {"default": false}
         }
     }
 </script>

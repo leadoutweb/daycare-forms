@@ -5,6 +5,7 @@
                 v-for="option in options"
                 class="btn"
                 :class="{'btn-grey': option.value !== value, 'btn-success': option.value === value}"
+                :disabled="disabled"
                 @click="$emit('input', option.value)"
         >
             {{ option.label }}
@@ -13,6 +14,7 @@
                 v-if="nullable"
                 class="btn"
                 :class="{'btn-grey': null !== value, 'btn-success': null === value}"
+                :disabled="disabled"
                 @click="$emit('input', null)"
         >
             {{ placeholder ? placeholder : "(none)" }}
@@ -32,7 +34,8 @@
             "value": {},
             "options": {},
             "placeholder": {},
-            "nullable": {}
+            "nullable": {},
+            "disabled": {"default": false}
         }
     }
 </script>

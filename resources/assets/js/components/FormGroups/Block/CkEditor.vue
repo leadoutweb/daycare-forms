@@ -4,6 +4,7 @@
                 :id="name"
                 :value="value"
                 :toolbar="toolbar"
+                :disabled="disabled"
                 @input="$emit('input', $event)"
         ></ck-editor>
     </form-group>
@@ -22,7 +23,8 @@
             "helpText": {"default": null},
             "value": {},
             "error": {},
-            "toolbar": {}
+            "toolbar": {},
+            "disabled": {"default": false}
         }
     }
 </script>
